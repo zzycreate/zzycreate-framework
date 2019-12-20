@@ -17,6 +17,14 @@ public abstract class BaseLoop<T> {
 
     private List<T> list;
     private int pageSize = DEFAULT_PAGE_SIZE;
+    private boolean end = false;
+
+    public BaseLoop() {
+    }
+
+    public BaseLoop(List<T> list) {
+        this.list = list;
+    }
 
     public BaseLoop(List<T> list, int s) {
         this(list, s, true);
@@ -25,16 +33,9 @@ public abstract class BaseLoop<T> {
     public BaseLoop(List<T> list, int s, boolean startImmediately) {
         this(list);
         this.pageSize = (s == 0) ? DEFAULT_PAGE_SIZE : s;
-        if(startImmediately){
+        if (startImmediately) {
             this.process();
         }
-    }
-
-    public BaseLoop(List<T> list) {
-        this.list = list;
-    }
-
-    public BaseLoop() {
     }
 
     /**
@@ -52,6 +53,8 @@ public abstract class BaseLoop<T> {
      * 分页处理
      */
     public void process() {
+        // 防止重复执行process方法
+        assert !this.end : "this loop is end, can not be processed!";
         int size = this.list.size();
         // 逢一进一方式算页码 (size-1)/pageSize+1 ; 以下写法解决size为0时计算异常
         int pageNum = (size - 1 + this.pageSize) / this.pageSize;
@@ -62,6 +65,7 @@ public abstract class BaseLoop<T> {
             List<T> subList = this.list.subList(start, end);
             loop(subList, i, this.pageSize, start, end);
         }
+        this.end = true;
     }
 
     public BaseLoop<T> list(List<T> list) {
@@ -74,16 +78,8 @@ public abstract class BaseLoop<T> {
         return this;
     }
 
-    public List<T> getList() {
-        return list;
-    }
-
     public void setList(List<T> list) {
         this.list = list;
-    }
-
-    public int getPageSize() {
-        return pageSize;
     }
 
     public void setPageSize(int pageSize) {
