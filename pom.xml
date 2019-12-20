@@ -13,6 +13,7 @@
   <modules>
     <module>zf-core</module>
     <module>zf-utils</module>
+    <module>zf-structure</module>
     <module>zf-mybatis</module>
     <module>zf-swagger</module>
     <module>zf-feign</module>
