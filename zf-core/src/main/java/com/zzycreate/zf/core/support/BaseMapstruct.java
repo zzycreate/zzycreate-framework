@@ -20,7 +20,7 @@ import java.util.List;
  * @date 2019/4/18
  */
 @MapperConfig
-public interface BaseMapping<Source, Target> {
+public interface BaseMapstruct<Source, Target> {
 
     /**
      * Source -> Target
