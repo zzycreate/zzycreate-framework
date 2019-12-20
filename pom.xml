@@ -37,6 +37,9 @@
     <jackson-bom.version>${jackson.version}</jackson-bom.version>
 
     <servlet.version>3.1.0</servlet.version>
+    <el-api.version>2.2</el-api.version>
+    <javax.el-api.version>3.0.0</javax.el-api.version>
+    <javax.el.version>2.2.4</javax.el.version>
     <jstl.version>1.2</jstl.version>
     <javax-validation.version>2.0.1.Final</javax-validation.version>
 
@@ -181,6 +184,21 @@
         <artifactId>javax.servlet-api</artifactId>
         <version>${servlet.version}</version>
         <scope>compile</scope>
+      </dependency>
+      <dependency>
+        <groupId>javax.el</groupId>
+        <artifactId>el-api</artifactId>
+        <version>${el-api.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>javax.el</groupId>
+        <artifactId>javax.el-api</artifactId>
+        <version>${javax.el-api.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.glassfish.web</groupId>
+        <artifactId>javax.el</artifactId>
+        <version>${javax.el.version}</version>
       </dependency>
       <dependency>
         <groupId>javax.servlet</groupId>
