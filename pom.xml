@@ -15,6 +15,7 @@
     <module>zf-utils</module>
     <module>zf-mybatis</module>
     <module>zf-swagger</module>
+    <module>zf-feign</module>
   </modules>
 
   <properties>
@@ -23,6 +24,7 @@
     <zf-core.version>1.0.0-SNAPSHOT</zf-core.version>
     <zf-mybatis.version>1.0.0-SNAPSHOT</zf-mybatis.version>
     <zf-utils.version>1.0.0-SNAPSHOT</zf-utils.version>
+    <zf-feign.version>1.0.0-SNAPSHOT</zf-feign.version>
     <zf-swagger.version>1.0.0-SNAPSHOT</zf-swagger.version>
 
     <spring-boot.version>2.1.8.RELEASE</spring-boot.version>
@@ -40,6 +42,7 @@
     <mysql.version>5.1.36</mysql.version>
     <hibernate.version>5.3.10.Final</hibernate.version>
     <hibernate-validator.version>6.0.17.Final</hibernate-validator.version>
+    <mybatis.version>3.5.1</mybatis.version>
     <mybatis-spring-boot-starter.version>2.0.0</mybatis-spring-boot-starter.version>
     <mybatis-plus-boot-starter.version>3.1.2</mybatis-plus-boot-starter.version>
     <hikaricp.version>3.2.0</hikaricp.version>
@@ -79,7 +82,6 @@
     <mapstruct.version>1.3.0.Final</mapstruct.version>
     <lombok.version>1.18.10</lombok.version>
 
-    <testng.version>6.14.3</testng.version>
     <jmockit.version>1.47</jmockit.version>
     <junit.version>4.12</junit.version>
     <testng.version>7.0.0</testng.version>
@@ -164,6 +166,11 @@
       </dependency>
       <dependency>
         <groupId>com.zzycreate</groupId>
+        <artifactId>zf-feign</artifactId>
+        <version>${zf-feign.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.zzycreate</groupId>
         <artifactId>zf-swagger</artifactId>
         <version>${zf-swagger.version}</version>
       </dependency>
@@ -211,6 +218,11 @@
         <groupId>org.hibernate.validator</groupId>
         <artifactId>hibernate-validator</artifactId>
         <version>${hibernate-validator.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.mybatis</groupId>
+        <artifactId>mybatis</artifactId>
+        <version>${mybatis.version}</version>
       </dependency>
       <dependency>
         <groupId>org.mybatis.spring.boot</groupId>

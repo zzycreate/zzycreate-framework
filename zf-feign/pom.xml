@@ -9,11 +9,11 @@
     <relativePath>..</relativePath>
   </parent>
 
-  <artifactId>zf-mybatis</artifactId>
+  <artifactId>zf-feign</artifactId>
   <packaging>jar</packaging>
 
-  <name>zzycreate framework mybatis</name>
-  <description>zzycreate framework mybatis</description>
+  <name>zzycreate framework feign</name>
+  <description>zzycreate framework feign</description>
 
   <properties>
     <java.version>1.8</java.version>
@@ -25,22 +25,14 @@
       <artifactId>zf-core</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.baomidou</groupId>
-      <artifactId>mybatis-plus-boot-starter</artifactId>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.mybatis</groupId>
-      <artifactId>mybatis</artifactId>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-openfeign</artifactId>
     </dependency>
-    <dependency>
-      <groupId>mysql</groupId>
-      <artifactId>mysql-connector-java</artifactId>
-      <scope>runtime</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.alibaba</groupId>
-      <artifactId>druid-spring-boot-starter</artifactId>
-    </dependency>
+
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>

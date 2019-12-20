@@ -11,7 +11,7 @@ import java.util.List;
  * }
  * }.pageSize(1000).process();
  *
- * @author zhaozhenyao
+ * @author zzycreate
  * @date 2018/10/9
  */
 public abstract class BaseLoop<T> {

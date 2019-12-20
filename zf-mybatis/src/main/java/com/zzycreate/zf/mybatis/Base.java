@@ -1,4 +1,4 @@
-package com.zzycreate.zf.mybatis.po;
+package com.zzycreate.zf.mybatis;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;

@@ -6,7 +6,7 @@ import org.junit.Test;
 /**
  * {@link PropertiesHelper} 的junit单元测试
  *
- * @author zhaozhenyao
+ * @author zzycreate
  * @date 2018/4/20
  */
 public class PropertiesHelperTest {

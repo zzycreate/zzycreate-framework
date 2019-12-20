@@ -1,4 +1,4 @@
-package com.zzycreate.zf.mybatis.po;
+package com.zzycreate.zf.mybatis;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.zzycreate.zf.core.enums.DeletedStatusEnum;
