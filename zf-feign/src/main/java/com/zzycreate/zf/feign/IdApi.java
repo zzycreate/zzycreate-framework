@@ -18,15 +18,6 @@ public interface IdApi {
      * @return ID
      */
     @RequestMapping(value = "/api/segment/get/{key}")
-    Long getId(@PathVariable("key") String key);
-
-    /**
-     * 获取ID
-     *
-     * @param key 键值
-     * @return ID
-     */
-    @RequestMapping(value = "/api/segment/get/{key}")
-    String getStrId(@PathVariable("key") String key);
+    String getId(@PathVariable("key") String key);
 
 }
