@@ -10,3 +10,10 @@ CREATE TABLE `leaf_alloc` (
 
 insert into leaf_alloc(biz_tag, max_id, step, description)
 values ('zzz-user_test-id', 1, 50, 'zzz-user的test_id');
+
+-- rbac
+insert into `leaf`.`leaf_alloc`(biz_tag, max_id, step, description) values ('zzz_user-user_id', 1, 50, 'zzz-user的user_id');
+insert into `leaf`.`leaf_alloc`(biz_tag, max_id, step, description) values ('zzz_user-user_role_id', 1, 50, 'zzz-user的user_role_id');
+insert into `leaf`.`leaf_alloc`(biz_tag, max_id, step, description) values ('zzz_user-role_id', 1, 50, 'zzz-user的role_id');
+insert into `leaf`.`leaf_alloc`(biz_tag, max_id, step, description) values ('zzz_user-role_perm_id', 1, 50, 'zzz-user的role_perm_id');
+insert into `leaf`.`leaf_alloc`(biz_tag, max_id, step, description) values ('zzz_user-perm_id', 1, 50, 'zzz-user的perm_id');

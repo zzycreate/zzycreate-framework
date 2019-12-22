@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @author zzycreate
  * @date 2019/12/19
  */
-@FeignClient(value = "leaf", url = "${zf.feign.leaf}")
+@FeignClient(value = "leaf", url = "${zf.feign.url.leaf}")
 public interface IdApi {
 
     /**
