@@ -12,6 +12,9 @@ import org.springframework.cloud.openfeign.support.SpringEncoder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
+import org.springframework.http.MediaType;
+import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManager;
@@ -19,6 +22,8 @@ import javax.net.ssl.X509TrustManager;
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
 import java.security.cert.X509Certificate;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * feign ssl
@@ -27,12 +32,12 @@ import java.security.cert.X509Certificate;
  * @date 15:29 2019/9/25
  **/
 @Configuration
-public class BaseFeginConfig {
+public class BaseFeignConfig {
 
     private final ObjectFactory<HttpMessageConverters> messageConverters;
 
     @Autowired
-    public BaseFeginConfig(ObjectFactory<HttpMessageConverters> messageConverters) {
+    public BaseFeignConfig(ObjectFactory<HttpMessageConverters> messageConverters) {
         this.messageConverters = messageConverters;
     }
 
@@ -85,4 +90,24 @@ public class BaseFeginConfig {
         return new Client.Default(ctx.getSocketFactory(),
                 (hostname, session) -> true);
     }
+
+    @Bean
+    public HttpMessageConverter<?> zfMessageConverter() {
+        return new ZfMessageConverter();
+    }
+
+    /**
+     * 自定义 MessageConverter
+     */
+    static class ZfMessageConverter extends MappingJackson2HttpMessageConverter {
+
+        public ZfMessageConverter() {
+            List<MediaType> mediaTypes = new ArrayList<>();
+            mediaTypes.add(MediaType.TEXT_PLAIN);
+            mediaTypes.add(MediaType.APPLICATION_JSON_UTF8);
+            mediaTypes.add(MediaType.APPLICATION_FORM_URLENCODED);
+            setSupportedMediaTypes(mediaTypes);
+        }
+    }
+
 }
